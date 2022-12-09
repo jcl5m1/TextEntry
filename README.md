@@ -1,5 +1,5 @@
 # TextEntry
-Simple python script for automating text entry into a web form from a text file.
+Simple python script for automating text entry into a web form from a text file where each line is an entry.
 
 **Dependencies: pyautogui**
 
