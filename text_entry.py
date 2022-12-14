@@ -8,8 +8,7 @@ parser = argparse.ArgumentParser(description="Text field entry bot")
 parser.add_argument("source", help="text file containing each entry")
 parser.add_argument("--offsetX", default=0, help="x pixel offset between text field and enter button")
 parser.add_argument("--offsetY", default=50, help="y pixel offset between text field and enter button")
-parser.add_argument("--delay", default=1, help="seconds of delay between text entry and click")
-text = ["adarshkowdle", "tbeeler", "tombari", "chaoguo"]
+parser.add_argument("--delay", default=1.5, help="seconds of delay between text entry and click")
 args = parser.parse_args()
 
 filename = args.source
@@ -35,4 +34,8 @@ with open(filename) as fp:
         pyautogui.click()
         pyautogui.moveRel(-clickOffset[0], -clickOffset[1], duration = .1)
         #delete any field content if it persists
+        time.sleep(0.5)
+        pyautogui.click()
+        pyautogui.hotkey('command', 'a',interval=0.01)
+        pyautogui.press('backspace')
 print("Done")
