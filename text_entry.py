@@ -36,6 +36,7 @@ with open(filename) as fp:
         #delete any field content if it persists
         time.sleep(0.5)
         pyautogui.click()
-        pyautogui.hotkey('command', 'a',interval=0.01)
+        # tested on mac OS only, change to match select all for system
+        pyautogui.hotkey('command', 'a',interval=0.01) 
         pyautogui.press('backspace')
 print("Done")
